@@ -16,14 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path, include
 from rest_framework.documentation import include_docs_urls
-from rest_framework.permissions import AllowAny
 from rest_framework.routers import DefaultRouter
 
 from django.conf import settings
 from django.conf.urls.static import static
-# import xadmin
+import xadmin
 
-# xadmin.autodiscover()
+xadmin.autodiscover()
 
 
 router = DefaultRouter(trailing_slash=False)
@@ -32,8 +31,8 @@ router = DefaultRouter(trailing_slash=False)
 
 
 urlpatterns = [
-    # path('xadmin/', xadmin.site.urls),
-    # path('ueditor/', include('DjangoUeditor.urls')),
+    path('xadmin/', xadmin.site.urls),
+    path('ueditor/', include('DjangoUeditor.urls')),
     re_path('^', include(router.urls)),
     path('docs/', include_docs_urls(title='PTMCloud API Doc')),
 ]

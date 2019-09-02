@@ -50,6 +50,11 @@ INSTALLED_APPS = [
     'user',
     'project',
     'spider',
+    'xadmin',
+    'crispy_forms',
+    'DjangoUeditor',
+
+
 ]
 
 MIDDLEWARE = [
@@ -131,7 +136,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-# USE_TZ = True
+# 数据库存储使用时间，True时间会被存为UTC的时间
 USE_TZ = False
 
 
